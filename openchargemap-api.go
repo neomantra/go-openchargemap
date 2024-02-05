@@ -580,7 +580,7 @@ type GetPoiParams struct {
 	Chargepointid *string `form:"chargepointid,omitempty" json:"chargepointid,omitempty"`
 
 	// Boundingbox Filter results to a given bounding box. specify top left and bottom right box corners as: (lat,lng),(lat2,lng2)
-	Boundingbox *[]interface{} `form:"boundingbox,omitempty" json:"boundingbox,omitempty"`
+	Boundingbox *string `form:"boundingbox,omitempty" json:"boundingbox,omitempty"`
 
 	// Polygon Filter results within a given Polygon. Specify an encoded polyline for the polygon shape. Polygon will be automatically closed from the last point to the first point.
 	Polygon *string `form:"polygon,omitempty" json:"polygon,omitempty"`

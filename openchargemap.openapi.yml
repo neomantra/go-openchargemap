@@ -152,7 +152,7 @@ paths:
           name: chargepointid
           description: Exact match on a given OCM POI ID (comma separated list)
         - schema:
-            type: array
+            type: string
           in: query
           name: boundingbox
           description: >-
