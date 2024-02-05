@@ -1,0 +1,29 @@
+version: '3'
+
+tasks:
+  tidy:
+    cmds:
+      - go mod tidy
+
+  build:
+    deps: [tidy]
+    cmds:
+      - go build -o chargemeup cmd/chargemeup/main.go
+    generates:
+      - chargemeup
+    silent: false
+
+  clean:
+    cmds:
+      - rm chargemeup
+
+  test:
+    cmds:
+      - echo no tests yet
+    silent: false
+
+  default:
+    cmds:
+      - task: test
+      - task: build
+
