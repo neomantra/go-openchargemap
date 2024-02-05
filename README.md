@@ -17,13 +17,18 @@ Building is performed with [task](https://taskfile.dev/) and our [Taskfile.yml](
 ```
 $ task --list-all
 task: Available tasks for this project:
-* build:         
-* clean:         
-* default:       
-* test:          
+* build:              
+* build-deps:         
+* clean:              
+* default:            
+* oapi-codegen:       
+* test:               
 * tidy:
 
-task build
+# needed when the upstream spec changes
+$ task oapi-codegen
+
+$ task build
 task: [tidy] go mod tidy
 task: [build] go build -o chargemeup cmd/chargemeup/main.go
 ```

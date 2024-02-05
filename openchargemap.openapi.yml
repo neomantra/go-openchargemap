@@ -485,6 +485,7 @@ components:
   schemas:
     POI:
       title: POI
+      x-go-name: ChargePoint
       type: object
       description: >-
         A POI (Point of Interest), also referred to as a `Site` or
