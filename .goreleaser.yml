@@ -46,7 +46,7 @@ universal_binaries:
 release:
   github:
     owner: neomantra
-    name: chargemeup
+    name: go-openchargemap
 
 brews:
   - homepage: https://github.com/neomantra/go-openchargemap
