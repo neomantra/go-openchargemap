@@ -47,7 +47,7 @@ task: [build] go build -o chargemeup cmd/chargemeup/main.go
 
 ## Credits and License
 
-Author with :heart: and :fire: by Evan Wies.  Copyright (c) 2024 Neomantra BV.
+Authored with :heart: and :fire: by Evan Wies.  Copyright (c) 2024 Neomantra BV.
 
 Many thanks to [OpenChargeMap](https://openchargemap.org/) and the community behind it!  Thanks to [oapi-codegen](https://github.com/deepmap/oapi-codegen) for the heavy lifting.
 
