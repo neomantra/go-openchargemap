@@ -4,7 +4,7 @@
 
 The base [`openchargemap.openapi.yml`](./openchargemap.openapi.yml) comes from [OpenChargeMaps's Developer Documentation](https://openchargemap.org/site/develop/api#/).
 
-## Installation
+## Go Library
 
 You can include it in your Go programs with:
 
@@ -12,17 +12,32 @@ You can include it in your Go programs with:
 go get github.com/neomantra/go-openchargemap
 ```
 
-See the `chargemeup` sample program for an example with how to use the API.  The bindings are created with [oapi-codegen](https://github.com/deepmap/oapi-codegen).
+See the `chargemeup` [sample program](./cmd/chargemeup/main.go) for an example with how to use the API.  The bindings are created with [oapi-codegen](https://github.com/deepmap/oapi-codegen).
 
-You after building (see below), you can run `chargemeup` to get a list of charging stations near a bounding box:
+## `chargemeup` CLI tool
+
+`chargemeup` is a command-line tool for querying the OpenChargeMap API.  Although you can [build it yourself](#building), you can install it with [Homebrew](https://brew.sh):
 
 ```
-./chargemeup -b "(40.63010790372053,-74.2775717248681),(40.7356464076158,-74.09370618215354)" | jq length  
+brew tap neomantra/homebrew-tap
+brew install neomantra/homebrew-tap/go-openchargemap
+```
+
+You can run `chargemeup` to get a list of charging stations near a bounding box `(lat1,lon1),(lat2,lon2)`:
+
+```
+$ chargemeup -b "(40.63010790372053,-74.2775717248681),(40.7356464076158,-74.09370618215354)" | jq length  
 41
 ```
+
 The output is the JSON, although there we are using [`jq`](https://jqlang.github.io/jq/) to count the number of POIs returned.
 
-## Building
+This [Jupyter notebook](./ocm_fun.ipynb) shows how to use the `chargemeup` CLI tool to query the OpenChargeMap API:
+
+```
+
+```
+
 
 Building is performed with [task](https://taskfile.dev/) and our [Taskfile.yml](./Taskfile.yml):
 
