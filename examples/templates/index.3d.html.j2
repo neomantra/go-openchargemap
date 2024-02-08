@@ -1,0 +1,31 @@
+<!--
+This file was auto-generated
+go-openchargemap
+https://github.com/neomantra/go-openchargemap 
+
+Many thanks to OSMBuildings.org
+-->
+
+<link href="https://cdn.osmbuildings.org/4.1.1/OSMBuildings.css" rel="stylesheet">
+<script src="https://cdn.osmbuildings.org/4.1.1/OSMBuildings.js"></script>
+
+<div id="map"></div>
+
+<script>
+var osmb = new OSMBuildings({
+	container: 'map',
+	position: { latitude: {{ rootCenterLon }}, longitude: {{ rootCenterLat }} },
+	zoom: 16,
+	minZoom: 15,
+	maxZoom: 20,
+	attribution: '© Data <a href="https://openstreetmap.org/copyright/">OpenStreetMap</a> © Map <a href="https://mapbox.com/">Mapbox</a> © 3D <a href="https://osmbuildings.org/copyright/">OSM Buildings</a>'
+})
+
+osmb.addMapTiles('https://api.mapbox.com/styles/v1/{{ mapbox_user }}/tiles/{z}/{x}/{y}?access_token={{ mapbox_token }}');
+
+osmb.addGeoJSONTiles('https://{s}.data.osmbuildings.org/0.2/anonymous/tile/{z}/{x}/{y}.json');
+
+{% for marker in markers %}
+osmb.addMarker({ latitude: {{ marker['latitude'] }}, longitude: {{ marker['longitude'] }}, altitude: 1}, {addr : "{{ marker['addr'] }}" }, { color: '#ff0000' });
+{% endfor %}
+</script>

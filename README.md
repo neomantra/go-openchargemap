@@ -6,6 +6,19 @@ The base [`openchargemap.openapi.yml`](./openchargemap.openapi.yml) comes from [
 
 You will need an OpenChargeMap API key -- you can get one by [Signing Up](https://openchargemap.org/site/loginprovider/beginlogin) and then going to [My Apps](https://openchargemap.org/site/profile/applications) in your Profile.   The examples and tools look for `OCM_KEY` in your environment, so `export OCM_KEY=<your-key>`
 
+## Examples
+
+We have the following examples:
+
+ * `chargemeup` shows how to use the [`go-openchargemap` library](./cmd/chargemeup/main.go)
+
+ * [`ocum_fun.ipynb` Jupyter notebook](./examples/ocm_fun.ipynb) showing how to use the `chargemeup` CLI tool to query the OpenChargeMap API within Python notebooks.  
+
+ * [`ocum_3d.ipynb` Jupyter notebook](./examples/ocm_3d.ipynb) is the same thing, but also generates an [OSMBuildings](https://osmbuildings.org) WebGL experience, along with wiht instructions to use it in VR.
+
+ * [`examples/chargers_near_addr.py`](./examples/chargers_near_addr.py) is a simple Python script that exercises it too
+
+
 ## Go Library
 
 You can include it in your Go programs with:
@@ -33,12 +46,6 @@ $ chargemeup -b "(40.63010790372053,-74.2775717248681),(40.7356464076158,-74.093
 ```
 
 The output is the JSON, although there we are using [`jq`](https://jqlang.github.io/jq/) to count the number of POIs returned.
-
-# Examples
-
-This [Jupyter notebook](./examples/ocm_fun.ipynb) shows how to use the `chargemeup` CLI tool to query the OpenChargeMap API.  
-
-This is a Python script that exercises it too: [`examples/chargers_near_addr.py`](./examples/chargers_near_addr.py)
 
 # Building
 
