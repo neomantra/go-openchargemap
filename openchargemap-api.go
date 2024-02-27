@@ -238,10 +238,10 @@ type LevelType struct {
 
 // MediaItem A user submitted media item related to a specific charge point or site. Currently always an image.
 type MediaItem struct {
-	ChargePointID      *string `json:"ChargePointID,omitempty"`
+	ChargePointID      *int64 `json:"ChargePointID,omitempty"`
 	Comment            *string `json:"Comment,omitempty"`
 	DateCreated        *string `json:"DateCreated,omitempty"`
-	ID                 *string `json:"ID,omitempty"`
+	ID                 *int64 `json:"ID,omitempty"`
 	IsEnabled          *bool   `json:"IsEnabled,omitempty"`
 	IsExternalResource *bool   `json:"IsExternalResource,omitempty"`
 	IsFeaturedItem     *bool   `json:"IsFeaturedItem,omitempty"`
@@ -435,7 +435,7 @@ type UserComment struct {
 	CommentType   *UserCommentType `json:"CommentType,omitempty"`
 	CommentTypeID *int             `json:"CommentTypeID,omitempty"`
 	DateCreated   *time.Time       `json:"DateCreated,omitempty"`
-	ID            *string          `json:"ID,omitempty"`
+	ID            *int          `json:"ID,omitempty"`
 	RelatedURL    *string          `json:"RelatedURL,omitempty"`
 
 	// User Short public summary profile for a specific Open Charge Map user
