@@ -6,6 +6,7 @@ require (
 	github.com/deepmap/oapi-codegen v1.16.2
 	github.com/oapi-codegen/runtime v1.1.1
 	github.com/spf13/pflag v1.0.5
+	github.com/yuriizinets/go-nominatim v1.3.0
 )
 
 require (
