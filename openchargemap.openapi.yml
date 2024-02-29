@@ -55,7 +55,7 @@ paths:
           name: countryid
           description: Exact match on a given numeric country id (comma separated list)
         - schema:
-            type: integer
+            type: number
           in: query
           name: latitude
           description: Latitude for distance calculation and filtering

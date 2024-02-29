@@ -532,7 +532,7 @@ type GetPoiParams struct {
 	Countryid *[]string `form:"countryid,omitempty" json:"countryid,omitempty"`
 
 	// Latitude Latitude for distance calculation and filtering
-	Latitude *int `form:"latitude,omitempty" json:"latitude,omitempty"`
+	Latitude *float32 `form:"latitude,omitempty" json:"latitude,omitempty"`
 
 	// Longitude Longitude for distance calculation and filtering
 	Longitude *float32 `form:"longitude,omitempty" json:"longitude,omitempty"`
