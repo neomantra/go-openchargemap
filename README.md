@@ -43,9 +43,44 @@ You can run `chargemeup` to get a list of charging stations near a bounding box 
 ```
 $ chargemeup -b "(40.63010790372053,-74.2775717248681),(40.7356464076158,-74.09370618215354)" | jq length  
 41
+
+$ chargemeup -a "Carroll Gardens, NY" --radius 1 | jq '.[].AddressInfo.AddressLine1'
+"383 Court St"
+"365 Bond St"
+"363 Bond St"
+"214 3rd Street"
+"353 4th Ave"
+"302 2ND St"
+
+$ chargemeup --lat 40.63010790372053 --lon -74.2775717248681 --radius 5 | jq length
+20
 ```
 
 The output is the JSON, although there we are using [`jq`](https://jqlang.github.io/jq/) to count the number of POIs returned.
+
+```
+$ chargemeup --help
+usage:  ./chargemeup <options> [input]
+
+"chargemeup" assists with queries to OpenChargeMap.
+
+Around Newark is:
+chargemeup -p "(40.63010790372053,-74.2775717248681),(40.7356464076158,-74.09370618215354)"
+
+chargemup -a "Newark, NJ" -r 10
+
+chargemeup --lat 40.7356464076158 --lon -74.09370618215354 --radius 5
+
+  -a, --address string   address to query (requires --radius)
+  -b, --bbox string      bounding box for query, "(lat1,lon1),(lat2,lon2)"
+  -h, --help             show help
+  -k, --key string       API key for OpenChargeMap, env var OCM_KEY)
+      --lat float32      latitude to query (requires --lon and --radius)
+      --lon float32      longitude to query (requires --lon and --radius)
+  -r, --radius float32   radial distance to query in kilometers (requires --address)
+  -s, --server string    API Server for OpenChargeMap, env var OCM_SERVER (default "https://api.openchargemap.io/v3")
+  -v, --verbose          verbose output to stderr
+```
 
 # Building
 
